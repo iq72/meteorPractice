@@ -1,19 +1,21 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
+  var img_data=[
+    {
+      img_src:"./imgs/ansha.jpg",
+      img_alt:"ansha"
+    },
+    {
+      img_src:"./imgs/insideOut.jpg",
+      img_alt:"inside out"
+    },{
+      img_src:"./imgs/littleprince.jpg",
+      img_alt:"little prince"
+    },{
+      img_src:"./imgs/martian.jpg",
+      img_alt:"Martian"
     }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
+  ];
+  Template.imgs.helpers({images:img_data});
 }
 
 if (Meteor.isServer) {
